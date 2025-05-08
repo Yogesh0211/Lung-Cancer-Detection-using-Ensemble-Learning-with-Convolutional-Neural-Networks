@@ -1,0 +1,101 @@
+Lung Cancer Classification Project
+Overview
+
+This project provides a comprehensive pipeline for lung cancer classification using X-ray images. It includes scripts for both model training and evaluation using pre-trained models. The system leverages multiple state-of-the-art deep learning architectures and combines them through an ensemble approach for improved accuracy.
+
+Project Structure
+├── EEE405 Stretch Goal/
+│   ├── Trained Models/ - Contains saved model weights
+│   ├── Processed Datasets/ - Preprocessed image data
+│   ├── Multi-Class_Testing.py - Evaluation script
+│   ├── README.txt - Project documentation
+│   ├── Kaggle Link.url - Link to Kaggle notebook
+│   └── OUTPUT_DIR/ - Contains processed data files
+├── TRAIN_DIR/ - Training images
+│   ├── LUNG_CANCER/
+│   └── NOT_LUNG_CANCER/
+├── TEST_DIR/ - Test images
+│   ├── LUNG_CANCER/
+│   └── NOT_LUNG_CANCER/
+├── Project_Report_CreatorsGarage.docx - Project report
+├── Project_Presentation.pdf - Presentation slides
+└── ALL_MODELS.py - Main training script
+
+Scripts
+
+1. ALL_MODELS.py - Training Pipeline
+
+This script handles the complete workflow from data preparation to model training and evaluation.
+
+Features:
+
+Data loading and preprocessing
+Training of multiple CNN architectures:
+ResNet50V2
+DenseNet201
+InceptionV3
+Xception
+MobileNetV2
+Weighted ensemble evaluation
+Performance visualization and comparison
+
+Usage: python ALL_MODELS.py
+
+Configuration:
+
+Update BASE_DATA_DIR to point to your dataset location
+Adjust hyperparameters in the CONFIGURATION section as needed
+2. Multi-Class_Testing.py - Evaluation Script
+
+This script uses pre-trained models to predict classifications on test data.
+
+Features:
+
+Loads multiple pre-trained models
+Evaluates performance on train, validation, and test sets
+Creates weighted ensemble predictions
+Generates comprehensive performance reports
+Produces confusion matrix visualizations
+Usage:python Multi-Class_Testing.py
+Requirements:
+
+Pre-trained models in .keras format
+Processed datasets in .npz format
+Dataset
+
+The project uses chest CT scan images from:
+ https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
+Kaggle Dataset - Chest CTScan Images
+
+Training on Kaggle
+
+The models were trained using this Kaggle notebook:
+https://www.kaggle.com/code/michaeldarnallasu/ensemble-learning-chest-cancer-classification
+Ensemble Learning - Chest Cancer Classification
+
+Performance
+
+The system provides:
+
+Individual model performance metrics
+Ensemble model results
+Training/validation curves
+Confusion matrices
+Detailed classification reports
+
+Requirements
+
+Python 3.6+
+TensorFlow 2.x
+OpenCV
+NumPy
+Matplotlib
+scikit-learn
+tqdm
+tabulate
+Expected Runtime
+
+Training pipeline: ~6 minutes on CPU (faster with GPU)
+Evaluation script: ~10 minutes depending on hardware
+
+
