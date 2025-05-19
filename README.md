@@ -1,2 +1,13 @@
 # Lung-Cancer-Detection-using-Ensemble-Learning-with-Convolutional-Neural-Networks
 Lung Cancer Detection-CNN: Achieved 99% accuracy for early lung cancer detection using an ensemble of CNN models on CT scan images.
+
+The Convolution Neural Network (CNN) is a deep learning network architecture that learns from data by finding similar patterns in images, which recognises objects, classes, and categories. In our project, we have used five pre-trained CNN models - Resnet-50, Inception, Xception, DenseNet, and MobileNet to identify cancer patients with the help of CT-scan images.
+I.	Resnet50v2: This model is known as Residual Network, which is 50 layers deep with 34 residual layers. The receding gradient problem is solved by ResNet by reusing the residual blocks in the architecture. Residual blocks connect the beginning and end of a convolution block with skip connections or shortcut connections.
+II.	Inception V3: It is a 48-layer deep architecture incorporated with auxiliary classifiers, optimisers and Factorised 7x7 convolutions. In general, it consists of convolution filters, Pooling layers, and Relu. It can achieve high accuracy in extracting the features and classifying the images.
+III.	Xception: It is an adjunct of the Inception architecture, with modified depth-wise separable convolution, which is better than Inception. It is a 71-layer deep architecture.
+IV.	DenseNet201: This model is 201 layers deep, requiring fewer parameters than the earlier CNN models. Each layer of DenseNet takes the feature maps of all the preceding layers as inputs, thereby reinforcing the feature propagation.
+V.	 Mobilenetv2: This model was developed by Google, particularly to use in smartphones. Mobilenet revolves around the idea of using depthwise separable convolutions. This model introduces an idea of inverted residual structure and linear bottleneck, where the last convolution of a residual block has a linear output before it’s added to the initial activations.  
+
+After preprocessing the image data, we used the (.npy format) data and trained all 5 models (resnet50_v2, inceptionv3, xception, densenet201, and mobilenetv2) for 100 epochs and a batch size of 16. Below are the training loss and accuracy plots we obtained for all models.
+
+For our data, Inception3 performed the least with a test accuracy of 92.14%, and Xception performed the best with a test accuracy of 99.80%. Based on the obtained test accuracy, we assigned weightage to each model using a mathematical formula as explained in the weighted ensembling theory above. The table below represents our accuracy stats and assigned ensembling weights for each model.
